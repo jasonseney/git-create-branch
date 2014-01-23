@@ -3,9 +3,9 @@ git-create-branch
 
 Creates (and switches to) a new branch both locally and on remote
 
-Usage: `git create-branch foobar`
+**Usage**: `git create-branch foobar`
 
-Example:
+#### Example:
 
     src (lorem) $ git create-branch foobar
     Switching to master...
@@ -19,6 +19,7 @@ Example:
     Branch foobar set up to track remote branch foobar from origin by rebasing.
     src (foobar) $ 
 
-### Notes:
 
-Place in your bin directory to create the git alias.
+### Installation
+
+Simply copy this script into a directory on your path (/usr/local/bin for example) and then give it executable permissions (chmod 755 /usr/local/bin/git-delete-branch).
