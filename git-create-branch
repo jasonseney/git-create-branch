@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Ensure a branch name was given 
+if [ $# -ne 1 ]; then 
+    echo "Error in $0 - Invalid argument count" 
+    echo "Syntax: $0 branch_name" 
+    exit 
+fi 
+
+
+if ( git show-ref --verify --quiet refs/heads/$1 ); then 
+    echo "$(tput bold)ERROR:$(tput sgr0) Branch already exists." 
+    exit
+else 
+    echo "Switching to master...";
+    git checkout master; 
+
+    echo "Creating new branch '${1}'...";
+    git checkout -b $1; 
+
+    echo "Pushing to remote origin...";
+
+    if ( git show-ref --verify --quiet refs/remotes/origin/$1); then 
+        echo "$(tput bold)ERROR:$(tput sgr0) Remote branch already exists." 
+        exit
+    fi 
+
+    git push origin --set-upstream $1 
+fi
