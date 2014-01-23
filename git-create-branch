@@ -13,7 +13,7 @@ if ( git show-ref --verify --quiet refs/heads/$1 ); then
     exit
 else 
     echo "Switching to master...";
-    git checkout master; 
+    git checkout master --quiet; 
 
     echo "Creating new branch '${1}'...";
     git checkout -b $1; 
