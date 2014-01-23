@@ -5,7 +5,7 @@ Creates (and switches to) a new branch both locally and on remote
 
 **Usage**: `git create-branch foobar`
 
-#### Example:
+##### Example:
 
     src (lorem) $ git create-branch foobar
     Switching to master...
